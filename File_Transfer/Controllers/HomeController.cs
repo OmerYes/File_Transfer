@@ -8,8 +8,15 @@ namespace File_Transfer.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("/")]
+       
+        [Route("Home/get-file")]
         public IActionResult Index()
+        {
+            return View();
+        }
+        [Route("")]
+        [Route("hey")]
+        public IActionResult test()
         {
             return View();
         }

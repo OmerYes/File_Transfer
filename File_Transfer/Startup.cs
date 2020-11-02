@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +15,7 @@ namespace File_Transfer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            //view de yaptığımız değişikliğin projeyi yeniden başlatmadan chrome yenileyerek değişiklikleri aktarılmasını sağlayan kod
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
         }
@@ -28,10 +29,10 @@ namespace File_Transfer
 
             app.UseRouting();
             app.UseStaticFiles();
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id=id}");
-            //});
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
