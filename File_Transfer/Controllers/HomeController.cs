@@ -1,22 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace File_Transfer.Controllers
 {
     public class HomeController : Controller
     {
-       
-        [Route("Home/get-file")]
+       [Route("")]
+        [Route("Home/upload")]
         public IActionResult Index()
         {
             return View();
         }
-        [Route("")]
-        [Route("hey")]
-        public IActionResult test()
+        [HttpPost]
+     [Route("Home/test")]
+        public IActionResult test(IFormCollection formCollection)
+        {
+            long size = 0;
+            var files = Request.Form.Files;
+            return View();
+        }
+        [Route("home/file")]
+        public IActionResult FileUpload()
         {
             return View();
         }

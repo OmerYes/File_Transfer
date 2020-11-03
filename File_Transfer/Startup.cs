@@ -31,6 +31,7 @@ namespace File_Transfer
             app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {
+                //attribute routing için kullanılan kod
                 endpoints.MapControllers();
             });
         }
