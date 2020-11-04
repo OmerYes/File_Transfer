@@ -19,7 +19,7 @@ $.fn.fileUploader = function (filesToUpload, sectionIdentifier) {
 
         for (var i = 0; i < evt.target.files.length; i++) {
             fileIdCounter++;
-            var file = evt.target.files[i];
+            var file = evt.target.files[0];
             var fileId = sectionIdentifier + fileIdCounter;
 
             filesToUpload.push({
@@ -27,14 +27,14 @@ $.fn.fileUploader = function (filesToUpload, sectionIdentifier) {
                 file: file
             });
 
-            //var removeLink = "<a class=\"removeFile\" href=\"#\" data-fileid=\"" + fileId + "\">Remove</a>";
-            var removeLink = "<i class=\"removeFile fa fa-trash\"  data-fileid=\"" + fileId + "\"></i>";
+            var removeLink = "<a class=\"removeFile\" href=\"#\" data-fileid=\"" + fileId + "\">Remove</a>";
+            //var removeLink = "<i class=\"removeFile fa fa-trash\"  data-fileid=\"" + fileId + "\"></i>";
             output.push("<li><strong>", file.name, "</strong> - ", file.size, " bytes. &nbsp; &nbsp; ", removeLink, "</li> ");
         };
 
         $(this).children(".fileList")
             .append(output.join(""));
-
+        
         //reset the input to null - nice little chrome bug!
         evt.target.value = null;
     });
@@ -66,6 +66,8 @@ $.fn.fileUploader = function (filesToUpload, sectionIdentifier) {
     return this;
 };
 
+
+//dosya yükleme alanı
 (function () {
     var filesToUpload = [];
 
@@ -80,7 +82,7 @@ $.fn.fileUploader = function (filesToUpload, sectionIdentifier) {
         for (var i = 0, len = filesToUpload.length; i < len; i++) {
             formData.append("files", filesToUpload[i].file);
         }
-        formData.append("test", $("#test").val());
+        //formData.append("test", $("#test").val());
         $.ajax({
             url: "https://localhost:44382/Home/test",
             data: formData,

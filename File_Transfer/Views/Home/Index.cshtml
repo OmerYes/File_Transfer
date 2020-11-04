@@ -35,7 +35,7 @@
                     <span class="fa fa-eercast"></span>
                 </div>
                 <div class="header-left-bottom">
-                    <form action="Home/test" method="post" enctype="multipart/form-data">
+                    <form @*action="Home/test"*@ method="post" enctype="multipart/form-data">
                         <div class="icon1">
                             <span class="fa fa-envelope" style="position:absolute"></span>
                             <input type="email" placeholder="Alıcı Email Adresi" style="padding-left:20px" />
@@ -58,7 +58,7 @@
 
                         <div class="bottom">
                             
-                            <button class="btn">Paylaş</button>
+                            <button id="uploadBtn" class="btn">Paylaş</button>
                         </div>
 
                     </form>
