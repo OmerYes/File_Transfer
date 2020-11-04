@@ -12,17 +12,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-    @*arka planda kayan resim*@
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
 
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
+    <link href="~/css/Bootstrap-3.3.css" rel="stylesheet" />
 
     <!-- Custom Theme files -->
     <link href="~/css/style.css" rel="stylesheet" />
@@ -46,25 +37,33 @@
                 <div class="header-left-bottom">
                     <form action="Home/test" method="post" enctype="multipart/form-data">
                         <div class="icon1">
-                            <span class="fa fa-user" style="position:absolute"></span>
+                            <span class="fa fa-envelope" style="position:absolute"></span>
                             <input type="email" placeholder="Alıcı Email Adresi" style="padding-left:20px" />
                         </div>
                         <div class="icon1">
-                            <span class="fa fa-user" style="position:absolute"></span>
-                            <input type="email" placeholder="Email Adresiniz"  style="padding-left:20px" />
+                            <span class="fa fa-envelope" style="position:absolute"></span>
+                            <input type="email" placeholder="Email Adresiniz" style="padding-left:20px" />
                         </div>
 
-                        <div class="icon1">
-                            
-                        </div>
-                      
+                       
+                            <div class="files" id="files1">
+
+                                <span class="btn btn-default btn-file">
+                                    Dosya Seç  <input type="file" name="files1" multiple />
+                                </span>
+                                <br />
+                                <ul class="fileList"></ul>
+                            </div>
+                     
+
                         <div class="bottom">
+                            
                             <button class="btn">Paylaş</button>
                         </div>
 
                     </form>
                 </div>
-            
+
             </div>
 
             <!-- copyright -->
@@ -78,5 +77,6 @@
 
 </body>
 </html>
+<script src="~/js/jqurey.3.5.1.js"></script>
+<script src="~/js/js_custom.js"></script>
 
-<!-- Latest compiled and minified JavaScript -->
